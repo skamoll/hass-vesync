@@ -26,6 +26,19 @@
       },
       "online": {
         "name": "Conectado"
+      },
+      "shake": {
+        "name": "Aviso de agitar"
+      }
+    },
+    "button": {
+      "stop": {
+        "name": "Detener cocinado"
+      }
+    },
+    "update": {
+      "firmware": {
+        "name": "Firmware"
       }
     },
     "image": {

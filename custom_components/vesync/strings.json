@@ -26,6 +26,19 @@
       },
       "online": {
         "name": "Online"
+      },
+      "shake": {
+        "name": "Shake reminder"
+      }
+    },
+    "button": {
+      "stop": {
+        "name": "Stop cooking"
+      }
+    },
+    "update": {
+      "firmware": {
+        "name": "Firmware"
       }
     },
     "image": {

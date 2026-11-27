@@ -1,0 +1,99 @@
+start_cook:
+  name: Start cooking
+  description: Start a cooking program on a VeSync air fryer.
+  fields:
+    cid:
+      description: Optional device CID (required if multiple devices exist).
+      selector:
+        text:
+    mode:
+      default: AirFry
+      selector:
+        select:
+          options:
+            - AirFry
+            - Roast
+            - Chicken
+            - Steak
+            - Seafood
+            - Veggies
+            - Frozen
+            - French fries
+            - Reheat
+            - Bake
+            - Broil
+    cook_seconds:
+      default: 600
+      selector:
+        number:
+          min: 60
+          max: 7200
+          unit_of_measurement: s
+    cook_temp:
+      default: 180
+      selector:
+        number:
+          min: 50
+          max: 230
+    temp_unit:
+      default: c
+      selector:
+        select:
+          options:
+            - c
+            - f
+    preheat_temp:
+      default: 0
+      selector:
+        number:
+          min: 0
+          max: 230
+    shake_seconds:
+      default: 0
+      selector:
+        number:
+          min: 0
+          max: 3600
+    has_warm:
+      default: false
+      selector:
+        boolean:
+
+end_cook:
+  name: Stop cooking
+  description: Stop active cooking on a VeSync air fryer.
+  fields:
+    cid:
+      description: Optional device CID.
+      selector:
+        text:
+
+set_cook_time:
+  name: Set cooking time
+  description: Update remaining cooking time in seconds.
+  fields:
+    cid:
+      selector:
+        text:
+    cook_seconds:
+      required: true
+      selector:
+        number:
+          min: 60
+          max: 7200
+          unit_of_measurement: s
+
+set_temp_unit:
+  name: Set temperature unit
+  description: Change temperature unit between Celsius and Fahrenheit.
+  fields:
+    cid:
+      selector:
+        text:
+    unit:
+      required: true
+      selector:
+        select:
+          options:
+            - c
+            - f

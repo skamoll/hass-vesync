@@ -25,6 +25,7 @@ async def async_setup_entry(
         entities.append(VeSyncOnlineBinarySensor(coordinator, cid))
         if is_airfryer_device(state.device):
             entities.append(VeSyncRunningBinarySensor(coordinator, cid))
+            entities.append(VeSyncShakeBinarySensor(coordinator, cid))
     async_add_entities(entities)
 
 
@@ -57,3 +58,17 @@ class VeSyncOnlineBinarySensor(VeSyncEntity, BinarySensorEntity):
         if state is None:
             return None
         return state.device.connection_status.lower() == "online"
+
+
+class VeSyncShakeBinarySensor(VeSyncEntity, BinarySensorEntity):
+    """Indicates whether the air fryer is prompting to shake the basket."""
+
+    def __init__(self, coordinator: VeSyncCoordinator, cid: str) -> None:
+        super().__init__(coordinator, cid, "shake")
+
+    @property
+    def is_on(self) -> bool | None:
+        state = self._state
+        if state is None or not state.status:
+            return None
+        return bool(state.status.get("shakeStatus"))

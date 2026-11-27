@@ -86,6 +86,16 @@ class VeSyncCookStatusSensor(VeSyncEntity, SensorEntity):
         val = str(state.status.get("cookStatus") or "").strip().lower()
         return val or None
 
+    @property
+    def extra_state_attributes(self) -> dict[str, Any]:
+        state = self._state
+        if state is None or not state.status:
+            return {}
+        return {
+            "step_index": state.status.get("stepIndex"),
+            "step_array": state.status.get("stepArray"),
+        }
+
 
 class VeSyncProgramSensor(VeSyncEntity, SensorEntity):
     """Translatable active or last-used program sensor."""
@@ -206,3 +216,16 @@ class VeSyncRssiSensor(VeSyncEntity, SensorEntity):
     def native_value(self) -> int | None:
         state = self._state
         return state.device.rssi if state is not None else None
+
+    @property
+    def extra_state_attributes(self) -> dict[str, Any]:
+        state = self._state
+        if state is None:
+            return {}
+        dev = state.device
+        return {
+            "wifi_name": dev.wifi_name,
+            "device_category": dev.device_category,
+            "device_region": dev.device_region,
+            "connection_type": dev.connection_type,
+        }
