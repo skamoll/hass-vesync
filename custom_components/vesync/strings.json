@@ -51,6 +51,7 @@
         "name": "Status",
         "state": {
           "standby": "Standby",
+          "ready": "Ready",
           "cooking": "Cooking",
           "cookend": "Finished",
           "cookstop": "Stopped",

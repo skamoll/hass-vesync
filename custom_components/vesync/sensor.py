@@ -18,6 +18,7 @@ from .entity import VeSyncEntity
 
 COOK_STATUS_OPTIONS = [
     "standby",
+    "ready",
     "cooking",
     "cookend",
     "cookstop",

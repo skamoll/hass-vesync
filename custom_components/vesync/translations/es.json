@@ -51,6 +51,7 @@
         "name": "Estado",
         "state": {
           "standby": "En espera",
+          "ready": "Listo",
           "cooking": "Cocinando",
           "cookend": "Finalizado",
           "cookstop": "Detenido",
