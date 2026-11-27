@@ -16,7 +16,19 @@ from .const import DOMAIN
 from .coordinator import VeSyncCoordinator, is_airfryer_device
 from .entity import VeSyncEntity
 
-COOK_STATUS_OPTIONS = ["standby", "cooking", "preheat", "pause", "end", "off"]
+COOK_STATUS_OPTIONS = [
+    "standby",
+    "cooking",
+    "cookend",
+    "cookstop",
+    "preheat",
+    "heating",
+    "keepwarm",
+    "pause",
+    "pullout",
+    "end",
+    "off",
+]
 PROGRAM_OPTIONS = [
     "air_fry",
     "bake",
@@ -92,6 +104,9 @@ class VeSyncProgramSensor(VeSyncEntity, SensorEntity):
         if state.last_completed_session and not state.is_running and state.last_completed_session.program_key:
             return state.last_completed_session.program_key
         if state.status:
+            step0 = (state.status.get("stepArray") or [None])[0]
+            if isinstance(step0, dict) and step0.get("mode"):
+                return normalize_program_key(step0.get("mode"))
             return normalize_program_key(state.status.get("cookMode"))
         return None
 

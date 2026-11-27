@@ -39,8 +39,13 @@
         "state": {
           "standby": "Standby",
           "cooking": "Cooking",
+          "cookend": "Finished",
+          "cookstop": "Stopped",
           "preheat": "Preheating",
+          "heating": "Heating",
+          "keepwarm": "Keep warm",
           "pause": "Paused",
+          "pullout": "Basket removed",
           "end": "Finished",
           "off": "Off"
         }

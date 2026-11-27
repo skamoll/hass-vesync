@@ -39,8 +39,13 @@
         "state": {
           "standby": "En espera",
           "cooking": "Cocinando",
+          "cookend": "Finalizado",
+          "cookstop": "Detenido",
           "preheat": "Precalentando",
+          "heating": "Calentando",
+          "keepwarm": "Mantener caliente",
           "pause": "En pausa",
+          "pullout": "Cesta extraída",
           "end": "Finalizado",
           "off": "Apagado"
         }
