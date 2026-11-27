@@ -1,0 +1,82 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connect to VeSync",
+        "data": {
+          "email": "Email",
+          "password": "Password",
+          "region": "Region"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Failed to connect",
+      "invalid_auth": "Invalid authentication",
+      "unknown": "Unexpected error"
+    },
+    "abort": {
+      "already_configured": "Account is already configured"
+    }
+  },
+  "entity": {
+    "binary_sensor": {
+      "running": {
+        "name": "Cooking"
+      },
+      "online": {
+        "name": "Online"
+      }
+    },
+    "image": {
+      "device_image": {
+        "name": "Device image"
+      }
+    },
+    "sensor": {
+      "cook_status": {
+        "name": "Status",
+        "state": {
+          "standby": "Standby",
+          "cooking": "Cooking",
+          "preheat": "Preheating",
+          "pause": "Paused",
+          "end": "Finished",
+          "off": "Off"
+        }
+      },
+      "program": {
+        "name": "Program",
+        "state": {
+          "air_fry": "Air Fry",
+          "bake": "Bake",
+          "broil": "Broil",
+          "chicken": "Chicken",
+          "french_fries": "French Fries",
+          "frozen": "Frozen",
+          "normal": "Manual",
+          "reheat": "Reheat",
+          "roast": "Roast",
+          "seafood": "Seafood",
+          "steak": "Steak",
+          "veggies": "Veggies"
+        }
+      },
+      "current_temperature": {
+        "name": "Temperature"
+      },
+      "remaining_time": {
+        "name": "Remaining time"
+      },
+      "elapsed_time": {
+        "name": "Elapsed time"
+      },
+      "last_cook_duration": {
+        "name": "Last cook duration"
+      },
+      "rssi": {
+        "name": "Wi-Fi signal"
+      }
+    }
+  }
+}

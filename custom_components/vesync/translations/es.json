@@ -1,0 +1,82 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Conectar con VeSync",
+        "data": {
+          "email": "Correo electrónico",
+          "password": "Contraseña",
+          "region": "Región"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "No se pudo conectar",
+      "invalid_auth": "Credenciales inválidas",
+      "unknown": "Error inesperado"
+    },
+    "abort": {
+      "already_configured": "Esta cuenta ya está configurada"
+    }
+  },
+  "entity": {
+    "binary_sensor": {
+      "running": {
+        "name": "En funcionamiento"
+      },
+      "online": {
+        "name": "Conectado"
+      }
+    },
+    "image": {
+      "device_image": {
+        "name": "Imagen del dispositivo"
+      }
+    },
+    "sensor": {
+      "cook_status": {
+        "name": "Estado",
+        "state": {
+          "standby": "En espera",
+          "cooking": "Cocinando",
+          "preheat": "Precalentando",
+          "pause": "En pausa",
+          "end": "Finalizado",
+          "off": "Apagado"
+        }
+      },
+      "program": {
+        "name": "Programa",
+        "state": {
+          "air_fry": "Freír con aire",
+          "bake": "Hornear",
+          "broil": "Gratinar",
+          "chicken": "Pollo",
+          "french_fries": "Patatas fritas",
+          "frozen": "Congelados",
+          "normal": "Manual",
+          "reheat": "Recalentar",
+          "roast": "Asar",
+          "seafood": "Pescado y marisco",
+          "steak": "Carne",
+          "veggies": "Verduras"
+        }
+      },
+      "current_temperature": {
+        "name": "Temperatura"
+      },
+      "remaining_time": {
+        "name": "Tiempo restante"
+      },
+      "elapsed_time": {
+        "name": "Tiempo transcurrido"
+      },
+      "last_cook_duration": {
+        "name": "Duración último uso"
+      },
+      "rssi": {
+        "name": "Señal Wi-Fi"
+      }
+    }
+  }
+}
